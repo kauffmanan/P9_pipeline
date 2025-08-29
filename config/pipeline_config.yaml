@@ -1,0 +1,12 @@
+simulation:
+  planet_9_mass: 10.0 # Earth masses
+  tno_population: 10000
+
+analysis:
+  bias_correction_method: "survey_pointing"
+  causal_inference_model: "propensity_score"
+
+paths:
+  raw_data: "data/raw/"
+  processed_data: "data/processed/"
+  results: "results/"
