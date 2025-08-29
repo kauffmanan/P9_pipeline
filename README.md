@@ -85,4 +85,4 @@ This project is a work in progress. Contributions are welcome! Please refer to `
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Creative Commons license.

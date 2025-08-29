@@ -1,12 +1,12 @@
-# TNO Analysis Pipeline Development Plan
+# План разработки конвейера для анализа ТНО
 
-## 1. Overview
+## 1. Обзор
 
-This document outlines the development plan for the TNO Analysis Pipeline. The project's primary goal is to analyze the orbits of Trans-Neptunian Objects (TNOs) to infer the existence and properties of a hypothetical ninth planet (Planet 9) in the outer Solar System.
+Этот документ описывает план разработки конвейера для анализа ТНО (Транснептуновых объектов). Основная цель проекта — проанализировать орбиты ТНО, чтобы сделать вывод о существовании и свойствах гипотетической девятой планеты (Планеты 9) во внешней Солнечной системе.
 
-The pipeline will be built around three core scientific modules: N-body simulation, observational bias correction, and causal inference.
+Конвейер будет построен на основе трех основных научных модулей: N-body моделирования, коррекции наблюдательных смещений и причинно-следственного вывода.
 
-## 2. Project Structure
+## 2. Структура проекта
 
 ```
 /
@@ -44,63 +44,63 @@ The pipeline will be built around three core scientific modules: N-body simulati
 |-- PLAN.md
 ```
 
-## 3. Core Modules
+## 3. Основные модули
 
-### 3.1. N-body Simulation
-- **Purpose:** To accurately model the gravitational dynamics of the outer Solar System, including the Sun, known planets, and a hypothetical Planet 9.
-- **Tasks:**
-    - Integrate a robust N-body simulation library (e.g., REBOUND).
-    - Develop functionality to generate synthetic populations of TNOs under different Planet 9 scenarios (e.g., varying mass, orbit).
+### 3.1. N-body моделирование
+- **Цель:** Точно смоделировать гравитационную динамику внешней Солнечной системы, включая Солнце, известные планеты и гипотетическую Планету 9.
+- **Задачи:**
+    - Интегрировать надежную библиотеку для N-body моделирования (например, REBOUND).
+    - Разработать функционал для генерации синтетических популяций ТНО при различных сценариях Планеты 9 (например, с разной массой, орбитой).
 
-### 3.2. Bias Correction
-- **Purpose:** To account for the significant selection effects and biases present in existing TNO observation datasets.
-- **Tasks:**
-    - Implement models for major observational biases (e.g., pointing history of surveys, detection efficiency).
-    - Develop a module to apply these corrections to both observed and synthetic TNO data to enable a fair comparison.
+### 3.2. Коррекция смещений
+- **Цель:** Учесть значительные эффекты отбора и смещения, присутствующие в существующих наборах данных наблюдений ТНО.
+- **Задачи:**
+    - Реализовать модели основных наблюдательных смещений (например, история наведения телескопов, эффективность обнаружения).
+    - Разработать модуль для применения этих поправок как к наблюдаемым, так и к синтетическим данным ТНО для обеспечения справедливого сравнения.
 
-### 3.3. Causal Inference
-- **Purpose:** To statistically evaluate the evidence for Planet 9 by comparing the observed TNO orbital data with the outcomes of the simulations.
-- **Tasks:**
-    - Implement a statistical framework to quantify the likelihood of the Planet 9 hypothesis.
-    - Use causal inference techniques to distinguish correlation from causation in the TNO orbital clustering.
+### 3.3. Причинно-следственный вывод
+- **Цель:** Статистически оценить доказательства в пользу Планеты 9 путем сравнения наблюдаемых данных об орбитах ТНО с результатами моделирования.
+- **Задачи:**
+    - Реализовать статистическую основу для количественной оценки вероятности гипотезы о Планете 9.
+    - Использовать методы причинно-следственного вывода, чтобы отличить корреляцию от причинности в кластеризации орбит ТНО.
 
-## 4. Development Phases
+## 4. Этапы разработки
 
-### Phase 1: N-body Simulation Module
-- **Goal:** Create a functional simulator capable of generating realistic synthetic TNO data.
-- **Timeline:** TBD
-- **Key Tasks:**
-    1. Select and validate an N-body simulation library.
-    2. Implement initial conditions for the outer Solar System.
-    3. Develop the synthetic TNO generation code.
+### Этап 1: Модуль N-body моделирования
+- **Цель:** Создать функциональный симулятор, способный генерировать реалистичные синтетические данные ТНО.
+- **Сроки:** TBD
+- **Ключевые задачи:**
+    1. Выбрать и проверить библиотеку для N-body моделирования.
+    2. Реализовать начальные условия для внешней Солнечной системы.
+    3. Разработать код для генерации синтетических ТНО.
 
-### Phase 2: Bias Correction Module
-- **Goal:** Develop and validate the bias correction algorithms.
-- **Timeline:** TBD
-- **Key Tasks:**
-    1. Characterize biases from major TNO surveys.
-    2. Implement the correction model.
-    3. Test the model on synthetic data with known biases.
+### Этап 2: Модуль коррекции смещений
+- **Цель:** Разработать и проверить алгоритмы коррекции смещений.
+- **Сроки:** TBD
+- **Ключевые задачи:**
+    1. Охарактеризовать смещения от основных обзоров ТНО.
+    2. Реализовать модель коррекции.
+    3. Протестировать модель на синтетических данных с известными смещениями.
 
-### Phase 3: Causal Inference & Analysis
-- **Goal:** Build the statistical engine to compare data and derive conclusions.
-- **Timeline:** TBD
-- **Key Tasks:**
-    1. Choose and implement appropriate statistical tests.
-    2. Develop the comparison framework between observed and synthetic data.
+### Этап 3: Причинно-следственный вывод и анализ
+- **Цель:** Создать статистический движок для сравнения данных и получения выводов.
+- **Сроки:** TBD
+- **Ключевые задачи:**
+    1. Выбрать и реализовать соответствующие статистические тесты.
+    2. Разработать основу для сравнения наблюдаемых и синтетических данных.
 
-### Phase 4: Pipeline Integration & Validation
-- **Goal:** Combine all modules into a cohesive, end-to-end pipeline.
-- **Timeline:** TBD
-- **Key Tasks:**
-    1. Create a master script or workflow to manage data flow between modules.
-    2. Perform end-to-end validation using synthetic data.
-    3. Run the full pipeline on the latest real TNO dataset.
+### Этап 4: Интеграция и проверка конвейера
+- **Цель:** Объединить все модули в единый, сквозной конвейер.
+- **Сроки:** TBD
+- **Ключевые задачи:**
+    1. Создать главный скрипт или рабочий процесс для управления потоком данных между модулями.
+    2. Провести сквозную проверку с использованием синтетических данных.
+    3. Запустить полный конвейер на последнем наборе реальных данных ТНО.
 
-## 5. Proposed Technology Stack
-- **Primary Language:** Python
-- **Core Libraries:**
-    - **Simulation:** `rebound`
-    - **Data Handling:** `pandas`, `numpy`, `astropy`
-    - **Statistics:** `scipy`, `statsmodels`
-    - **Workflow:** (To be determined - e.g., custom scripts, Snakemake)
+## 5. Предлагаемый стек технологий
+- **Основной язык:** Python
+- **Основные библиотеки:**
+    - **Моделирование:** `rebound`
+    - **Обработка данных:** `pandas`, `numpy`, `astropy`
+    - **Статистика:** `scipy`, `statsmodels`
+    - **Рабочий процесс:** (Будет определено позже - например, кастомные скрипты, Snakemake)
